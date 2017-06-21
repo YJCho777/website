@@ -1,0 +1,148 @@
+.header {
+  padding:6px 10px;
+  text-align: center;
+  background: white;
+  background-size: cover;
+
+  top: 0;
+  position: fixed;
+  width: 100%;
+  margin: auto;
+  z-index: 1;
+  font-weight: bold;
+  font-family: 'Lobster';
+  font-size: 20px;
+}
+
+.main-content {
+  width: 100%;
+  margin-top: 60px;
+
+}
+
+.footer {
+   text-align: center;
+   border-top: 1px solid #aaa;
+   z-index: 1;
+   position: fixed;
+   bottom: 0;
+   width: 100%;
+   background: white;
+ }
+
+ul_top {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid #e7e7e7;
+    background-color: #f3f3f3;
+}
+
+li_top {
+    float: left;
+}
+
+li_top a {
+    display: block;
+    color: #666;
+    text-align: center;
+    padding: 10px 13px;
+    text-decoration: none;
+}
+
+li_top a:hover:not(.active) {
+    background-color: #f3f3f3;
+}
+
+li_top a.active {
+    color: white;
+    background-color: #4CAF50;
+}
+
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 20%;
+    background-color: #f1f1f1;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+}
+
+li a {
+    display: block;
+    color: #000;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+li a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+li a:hover:not(.active) {
+    background-color: #555;
+    color: white;
+}
+
+h1 {
+  font-family: 'Lobster';
+}
+
+.dropbtn {
+    background-color: #f1f1f1;
+    color: #000;
+    padding: 8px 16px;
+    margin: 0;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: relative;
+    background-color:#f1f1f1;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 8px 16px;
+    overflow: auto;
+
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 8px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {background-color:  #f1f1f1;}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #f1f1f1;
+}
+
+
+body {
+    background: white url("images/garlic.jpg")  ;
+    background-size: cover;
+    z-index: 3;
+}
+
+p{
+ font-size: 20px;
+ font-family: Times;
+}
+

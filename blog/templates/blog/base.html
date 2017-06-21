@@ -1,0 +1,54 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+
+<html>
+<head>
+<title>Y.J. Cho</title>
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+<link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{% static 'css/blog.css' %}">
+</head> 
+
+<body>
+  <div class="header">
+  <ul_top>
+  <li_top> <a href="/"> Y.J. Cho's Home Page</a></li_top>
+  <li_top style="float:right"><a href="#news">Useful sites</a></li_top>
+  <li_top style="float:right"><a href="#about">Contract</a></li_top>
+  <li_top style="float:right"><a href="#contract">About</a></li_top>
+  <li_top style="float:right"><a href="/admin">Log in</a></li_top>
+  </ul_top>
+   </div>
+
+
+<div class="main-content">
+  <ul>
+   <li><a class ="active" href="#Projects">Finance & Econometrics</a></li>
+   <li><a href="#Finance">Statistics</a></li>
+   <li><a href="#Statitics">Computing</a></li>
+    <li class="dropdown">
+     <button class="dropbtn">Projects</button>
+      <div class="dropdown-content">
+      <a href="#">Time Series</a>
+      <a href="#">Stock Market</a>
+      <a href="#">Simulation</a>
+    </li>
+ </ul>
+</div>
+
+<div style="margin-left:20%;padding:1px 16px;height:1000px;">
+                <div class="col-md-8">
+                    {% block content %}
+                    {% endblock %}
+                </div>
+</div>
+          
+<div class="footer">
+    <p>Referece site: <a href="https://www.w3schools.com">https://www.w3schools.com</a>, 
+                      <a href="https://tutorial.djangogirls.org">https://tutorial.djangogirls.org </a>,
+		      <a href="http://hplgit.github.io/">http://hplgit.github.io/ </a>
+</div>
+
+</body>  
+</html>
