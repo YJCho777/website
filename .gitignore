@@ -1,6 +1,8 @@
 *.pyc
 *~
 __pycache__
-webvenv
+/webvenv/*
 db.sqlite3
 .DS_Store
+webvenv/*
+webvenv

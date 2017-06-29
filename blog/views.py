@@ -2,12 +2,9 @@ from django.shortcuts import render
 from django.utils import timezone
 from .models import Post
 from django.shortcuts import render, get_object_or_404
-from django.shortcuts import redirect
 from .forms import PostForm
-import matplotlib.pyplot as plt
 from django.conf import settings
 from django.conf.urls.static import static
-from django.http import HttpResponse, HttpResponseRedirect
 # Create your views here.#
 
 
@@ -87,13 +84,11 @@ def simulation(request):
 
 #import for ChartData
 #views for chartjs 
-from django.views.generic import View
 from rest_framework.views import APIView
 from rest_framework.response import Response
 import pandas_datareader.data as web
 from pandas import Series, DataFrame
 from datetime import date
-import numpy as np
 import datetime 
 
 class ChartData(APIView):
@@ -101,7 +96,7 @@ class ChartData(APIView):
     permission_classes = []
 
     def get(self, request, format=None):
-        start = datetime.datetime(2010, 1, 1)
+        start = datetime.datetime(2017, 1, 1)
         end = date.today()
      
         google = web.DataReader("GOOG", "google", start, end)
