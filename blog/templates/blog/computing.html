@@ -1,0 +1,25 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+
+
+<html>
+    <head>
+        <title>A.J. Cho</title>
+
+    </head>
+    <body>
+
+	<div class ="st"> Computing </div>
+	{% for post in posts %}
+	<div>
+	{% if post.category == 'computing' %}
+	<hl>{{ post.title }}</hl>
+	<p>{{post.text|linebreaksbr}}</p>
+    <ti>published: {{post.published_date.date}}</ti>
+	</div>
+        {% endif %}
+	{% endfor %}
+
+    </body>
+</html>
+{% endblock %}

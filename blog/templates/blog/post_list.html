@@ -1,28 +1,44 @@
 {% extends 'blog/base.html' %}
 {% block content %}
 
-{% load staticfiles %}
-
-<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-<link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-<link rel="stylesheet" href="{% static 'css/blog.css' %}">
-
 <html>
     <head>
         <title>A.J. Cho</title>
 
     </head>
     <body>
-
+    <div class = "bgimg">
+     <h1> Welcome to my home page</h1>
+  	</div>
+  	
+  		{% for post in posts %}
+  		<div>
+		{% if post.category == 'intro' %}
+	<!--<h1>{{ post.title }}</h1> -->
+	<hl>{{post.text|linebreaksbr}}</hl>
+        <ti>published: {{post.published_date.date}}</ti>
+        {% endif %}
+	{% endfor %}
+	</div>
+	
+	<div class="dotted">
+  	<h1>What is new</h1>
+  	
 	{% for post in posts %}
 	<div>
-	<h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
-	<p>{{post.text|linebreaksbr}}</p>
-        <p>published: {{post.published_date}}</p>
+	{% if post.category == 'finance_econ' or post.category == 'statistics' or post.category == 'computing' or post.category == 'django_css'%}
+	<hl><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></hl>
+	<!-- <p>{{post.text|linebreaksbr}}</p> -->
+	<ti>{{post.published_date.date}}</ti>
+	<ti>tag: <a href="/{{post.category}}"> {{post.category}}</a></ti>
 	</div>
-	{% endfor %}
+	
+	{% endif %}
+  	{% endfor %}
+</div>
 
-    </body>
+</div>
+
+
 </html>
 {% endblock %}
