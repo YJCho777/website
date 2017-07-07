@@ -22,11 +22,6 @@
 	{% endfor %}
 	</div>
 	
-	  		{% for post in posts %}
-  		{% if post.category == 'intro' %}
-	{{post.text|safe}}
-             {% endif %}
-	{% endfor %}
 	
 	<div class="dotted">
   	<h1>What is new</h1>
@@ -34,7 +29,7 @@
 
 	{% for post in posts %}
 	<div>
-	{% if post.category != 'about'%}
+	{% if post.category != 'intro' %}
 	<hl><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></hl>
 	<!-- <p>{{post.text|safe}}</p> -->
 	<ti>{{post.published_date.date}}</ti>
