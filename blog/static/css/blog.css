@@ -160,19 +160,27 @@ hl {
 	color: black;
    font-weight: bold;
   font-family: 'times';
-  font-size: 17px;
+  font-size: 19px;
   
 }
 
 ti {
 	color: black;
 	font-szie:3px;
-	font-family: 'times'
+	font-family: 'times';
+	 font-weight: bold;
 }
+
+p {
+	color: black;
+	font-szie:19px;
+	font-family: 'times';
+}
+
 
 .dotted {
 	 border-style: double;
-	 border-radius: 10px;
+	 border-radius: 50px;
     border-color: green;
     background-color: #f1f1f1;
 	

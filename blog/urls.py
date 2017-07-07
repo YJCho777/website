@@ -17,5 +17,6 @@ urlpatterns = [
     url(r'^stock_market$', views.stock_market, name='stock_market'),       
     url(r'^simulation$', views.simulation, name='simulation'),
     url(r'^stock_market/data/$', ChartData.as_view()), 
+    
 
 ]

@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'blog',
     'chartjs',
+    'tinymce',
+
   #  'rest_framework',
 ]
 
@@ -108,7 +110,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/Chicago'
 
 USE_I18N = True
 
@@ -122,3 +124,21 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+TINYMCE_JS_URL = os.path.join(STATIC_URL, "js/tiny_mce/tiny_mce.js")
+TINYMCE_JS_ROOT = os.path.join(STATIC_URL, "js/tiny_mce")
+TINYMCE_DEFAULT_CONFIG = {
+    'plugins': "table,spellchecker,paste,searchreplace, table",
+    'theme': "advanced",
+    'cleanup_on_startup': True,
+    'custom_undo_redo_levels': 10,
+    'theme_advanced_buttons3': 'spellchecker, table',
+    'width': '80%', 
+    'height': '500',
+    'content_css': 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css',
+
+}
+
+
+TINYMCE_SPELLCHECKER = True
+TINYMCE_COMPRESSOR = True

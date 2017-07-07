@@ -14,7 +14,7 @@
 	<div>
 	{% if post.category == 'contact' %}
 	<hl>{{ post.title }}</hl>
-	<p>{{post.text|linebreaksbr}}</p>
+	<p>{{post.text|safe}}</p>
     <ti>published: {{post.published_date.date}}</ti>
 	</div>
         {% endif %}

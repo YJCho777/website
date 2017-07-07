@@ -1,2 +1,5 @@
 eclipse.preferences.version=1
 encoding//blog/templates/blog/finance_econ.html=UTF-8
+encoding//blog/templates/blog/test.html=UTF-8
+encoding//webvenv/Lib/site-packages/grappelli/forms.py=utf-8
+encoding//webvenv/Lib/site-packages/grappelli/tests/models.py=utf-8

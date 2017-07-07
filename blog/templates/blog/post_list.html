@@ -4,7 +4,8 @@
 <html>
     <head>
         <title>A.J. Cho</title>
-
+  <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
+  <script>tinymce.init({ selector:'textarea' });</script>
     </head>
     <body>
     <div class = "bgimg">
@@ -15,26 +16,34 @@
   		<div>
 		{% if post.category == 'intro' %}
 	<!--<h1>{{ post.title }}</h1> -->
-	<hl>{{post.text|linebreaksbr}}</hl>
+	<hl>{{post.text|safe}}</hl>
         <ti>published: {{post.published_date.date}}</ti>
         {% endif %}
 	{% endfor %}
 	</div>
 	
+	  		{% for post in posts %}
+  		{% if post.category == 'intro' %}
+	{{post.text|safe}}
+             {% endif %}
+	{% endfor %}
+	
 	<div class="dotted">
   	<h1>What is new</h1>
   	
+
 	{% for post in posts %}
 	<div>
-	{% if post.category == 'finance_econ' or post.category == 'statistics' or post.category == 'computing' or post.category == 'django_css'%}
+	{% if post.category != 'about'%}
 	<hl><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></hl>
-	<!-- <p>{{post.text|linebreaksbr}}</p> -->
+	<!-- <p>{{post.text|safe}}</p> -->
 	<ti>{{post.published_date.date}}</ti>
 	<ti>tag: <a href="/{{post.category}}"> {{post.category}}</a></ti>
 	</div>
-	
 	{% endif %}
   	{% endfor %}
+  	
+  	
 </div>
 
 </div>
